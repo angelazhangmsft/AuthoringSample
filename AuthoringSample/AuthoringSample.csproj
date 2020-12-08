@@ -1,17 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
-    <Platforms>x64</Platforms>
-	<CsWinRTComponent>true</CsWinRTComponent>
-	<AssemblyVersion>1.0.0.0</AssemblyVersion>
-	  <GeneratedFilesDir>$(OutDir)</GeneratedFilesDir>
-	<CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
-
+      <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+      <CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+      <CsWinRTComponent>true</CsWinRTComponent>
+      <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <CopyLocalLockFileAssemblies Condition="$(CsWinRTComponent)==true">true</CopyLocalLockFileAssemblies>
+      <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.0" />
   </ItemGroup>
 
 </Project>
