@@ -9,14 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{F28D052F-9967-4B3E-83E2-5C1B840C9EC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsConsoleApp", "CsConsoleApp\CsConsoleApp.csproj", "{7E23A1B2-897E-4FB6-A03C-FC1D8328B786}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreAppUWP", "CoreAppUWP\CoreAppUWP.vcxproj", "{AD8A35BC-0E3E-4732-8A2C-CA29FC046DF5}"
-EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WinUIDesktopApp (Package)", "WinUIDesktopApp\WinUIDesktopApp (Package)\WinUIDesktopApp (Package).wapproj", "{A3988904-5601-4607-BD78-E030DC3BEA40}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinUIDesktopApp", "WinUIDesktopApp\WinUIDesktopApp\WinUIDesktopApp.vcxproj", "{B02FA718-516C-41CF-87B7-D61E5328C17B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
