@@ -14,7 +14,7 @@ namespace AuthoringSample
         public string AllFiles { get; set; }
 
         public IList<IList<string>> GroupedFiles = new List<IList<string>>();
-        //public IList<IList<string>> OutputFiles { get; set; } // waiting for collection mapping
+        //public IList<IList<string>> GroupedFiles { get; set; } // waiting for collection mapping
 
         /// <summary>
         /// list all the files and folders in Pictures library 
@@ -28,7 +28,7 @@ namespace AuthoringSample
                 IReadOnlyList<StorageFolder> folderList = await picturesFolder.GetFoldersAsync();
 
                 var count = fileList.Count + folderList.Count;
-                StringBuilder outputText = new StringBuilder(picturesFolder.Name + " (" + count + ")\n\n");
+                StringBuilder outputText = new(picturesFolder.Name + " (" + count + ")\n\n");
 
                 foreach (StorageFolder folder in folderList)
                 {
@@ -106,8 +106,10 @@ namespace AuthoringSample
             foreach (StorageFolder folder in folderList)
             {
                 IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
-                var newList = new List<string>();
-                newList.Add("Group: " + folder.Name + " (" + fileList.Count + ")");
+                var newList = new List<string>
+                {
+                    "Group: " + folder.Name + " (" + fileList.Count + ")"
+                };
                 GroupedFiles.Add(newList);
                 foreach (StorageFile file in fileList)
                 {

@@ -6,10 +6,25 @@ namespace AuthoringSample
 {
     public class PackageFinder
     {
-        public Dictionary<string, List<string>> PackageList = new Dictionary<string, List<string>>();
+        public Dictionary<string, List<string>> PackageList = new();
 
         /// <summary>
-        /// list all nuget packages and versions
+        /// print package info after finding
+        /// </summary>
+        public void PrintPackages()
+        {
+            foreach (KeyValuePair<string, List<string>> entry in PackageList)
+            {
+                Console.WriteLine(entry.Key);
+                foreach (string ver in entry.Value)
+                {
+                    Console.WriteLine($"----" + ver);
+                }     
+            }
+        }
+
+        /// <summary>
+        /// find all nuget packages and versions
         /// </summary>
         public void FindPackages(string nugetPath, bool getVersions)
         {
@@ -18,11 +33,10 @@ namespace AuthoringSample
             {
                 // get package name by removing path parent
                 var indexEnd = pkgDir.LastIndexOf('\\');
-                var packageName = pkgDir.Substring(indexEnd + 1);
+                var packageName = pkgDir[(indexEnd + 1)..];
 
-                List<string> versionList = new List<string>();
+                List<string> versionList = new();
                 PackageList.Add(packageName, versionList);
-                Console.WriteLine(packageName);
 
                 // get version info
                 if (getVersions)
@@ -32,10 +46,9 @@ namespace AuthoringSample
                     {
                         // get version by removing path parent
                         var indexEnd2 = verPath.LastIndexOf('\\');
-                        var verNumber = verPath.Substring(indexEnd2 + 1);
+                        var verNumber = verPath[(indexEnd2 + 1)..];
 
                         versionList.Add(verNumber);
-                        Console.WriteLine($"----" + verNumber);
                     } 
                 }
             }
