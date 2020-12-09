@@ -9,19 +9,19 @@ using namespace std;
 int main()
 {
     init_apartment();
-
-    wstring path = L"C:/Users/angzhang/.nuget/packages"; // change to your packages path
-
-    PackageFinder packageFinder;
-    packageFinder.FindPackages(path, true);
-    packageFinder.PrintPackages();
-
+    
     FolderEnumeration folderEnumerator;
     folderEnumerator.GetFilesAndFoldersAsync().get(); 
     wcout << folderEnumerator.AllFiles().c_str();
 
     folderEnumerator.GroupByMonthAsync().get();
+    //folderEnumerator.GroupByRatingAsync().get();
+    //folderEnumerator.GroupByTagAsync().get();
     folderEnumerator.PrintGroupedFiles();
-    
+
+    wstring path = L"C:/Users/angzhang/.nuget/packages"; // change to your packages path
+    PackageFinder packageFinder;
+    packageFinder.FindPackages(path, true);
+    packageFinder.PrintPackages();
 
 }

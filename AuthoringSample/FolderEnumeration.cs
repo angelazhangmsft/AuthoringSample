@@ -12,7 +12,6 @@ namespace AuthoringSample
     public class FolderEnumeration
     {
         public string AllFiles { get; set; }
-
         public IList<IList<string>> GroupedFiles = new List<IList<string>>();
         //public IList<IList<string>> GroupedFiles { get; set; } // waiting for collection mapping
 
@@ -34,12 +33,10 @@ namespace AuthoringSample
                 {
                     outputText.AppendLine("    " + folder.DisplayName + "\\");
                 }
-
                 foreach (StorageFile file in fileList)
                 {
                     outputText.AppendLine("    " + file.Name);
                 }
-
                 AllFiles = outputText.ToString();
             }).AsAsyncAction();
         }
@@ -106,10 +103,10 @@ namespace AuthoringSample
             foreach (StorageFolder folder in folderList)
             {
                 IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
-                var newList = new List<string>
-                {
-                    "Group: " + folder.Name + " (" + fileList.Count + ")"
-                };
+                var newList = new List<string>();
+
+                newList.Add("Group: " + folder.Name + " (" + fileList.Count + ")");
+                
                 GroupedFiles.Add(newList);
                 foreach (StorageFile file in fileList)
                 {
