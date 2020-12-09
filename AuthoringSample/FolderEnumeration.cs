@@ -11,19 +11,19 @@ namespace AuthoringSample
 {
     public class FolderEnumeration
     {
-        public List<List<string>> OutputFiles = new List<List<string>>();
+        public string AllFiles { get; set; }
+
+        public IList<IList<string>> GroupedFiles = new List<IList<string>>();
+        //public IList<IList<string>> OutputFiles { get; set; } // waiting for collection mapping
 
         /// <summary>
         /// list all the files and folders in Pictures library 
         /// </summary>
         public IAsyncAction GetFilesAndFoldersAsync()
         {
-            Console.WriteLine("in method");
             return Task.Run(async () =>
             {
-                Console.WriteLine("before first await");
                 StorageFolder picturesFolder = await KnownFolders.GetFolderForUserAsync(null /* current user */, KnownFolderId.PicturesLibrary);
-                Console.WriteLine("past first await");
                 IReadOnlyList<StorageFile> fileList = await picturesFolder.GetFilesAsync();
                 IReadOnlyList<StorageFolder> folderList = await picturesFolder.GetFoldersAsync();
 
@@ -40,21 +40,22 @@ namespace AuthoringSample
                     outputText.AppendLine("    " + file.Name);
                 }
 
-                Console.WriteLine(outputText.ToString());
+                AllFiles = outputText.ToString();
             }).AsAsyncAction();
         }
 
         /// <summary>
         /// print grouped files from group by functions
         /// </summary>
-        public void PrintOutputFiles()
+        public void PrintGroupedFiles()
         {
-            foreach (var slist in OutputFiles)
+            foreach (var slist in GroupedFiles)
             {
                 foreach (var file in slist)
                 {
                     Console.WriteLine(file);
                 }
+                Console.WriteLine("\n");
             }
         }
 
@@ -96,7 +97,7 @@ namespace AuthoringSample
         /// </summary>
         private async Task GroupByHelperAsync(QueryOptions queryOptions)
         {
-            OutputFiles.Clear();
+            GroupedFiles.Clear();
 
             StorageFolder picturesFolder = await KnownFolders.GetFolderForUserAsync(null /* current user */, KnownFolderId.PicturesLibrary);
             StorageFolderQueryResult queryResult = picturesFolder.CreateFolderQueryWithOptions(queryOptions);
@@ -106,8 +107,8 @@ namespace AuthoringSample
             {
                 IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
                 var newList = new List<string>();
-                newList.Add(folder.Name + " (" + fileList.Count + ")");
-                OutputFiles.Add(newList);
+                newList.Add("Group: " + folder.Name + " (" + fileList.Count + ")");
+                GroupedFiles.Add(newList);
                 foreach (StorageFile file in fileList)
                 {
                     newList.Add(file.Name);

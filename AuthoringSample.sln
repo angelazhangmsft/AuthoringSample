@@ -17,8 +17,6 @@ Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "WinUIDesktopApp (Package)",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinUIDesktopApp", "WinUIDesktopApp\WinUIDesktopApp\WinUIDesktopApp.vcxproj", "{B02FA718-516C-41CF-87B7-D61E5328C17B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DesktopApp", "DesktopApp\DesktopApp.vcxproj", "{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -151,20 +149,6 @@ Global
 		{B02FA718-516C-41CF-87B7-D61E5328C17B}.Release|x64.Build.0 = Release|x64
 		{B02FA718-516C-41CF-87B7-D61E5328C17B}.Release|x86.ActiveCfg = Release|Win32
 		{B02FA718-516C-41CF-87B7-D61E5328C17B}.Release|x86.Build.0 = Release|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|ARM.ActiveCfg = Debug|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|ARM64.ActiveCfg = Debug|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|x64.ActiveCfg = Debug|x64
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|x64.Build.0 = Debug|x64
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|x86.ActiveCfg = Debug|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Debug|x86.Build.0 = Debug|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|Any CPU.ActiveCfg = Release|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|ARM.ActiveCfg = Release|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|ARM64.ActiveCfg = Release|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|x64.ActiveCfg = Release|x64
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|x64.Build.0 = Release|x64
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|x86.ActiveCfg = Release|Win32
-		{4CDB9B3E-7A97-4622-AA8B-5C7BDE7DE206}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
