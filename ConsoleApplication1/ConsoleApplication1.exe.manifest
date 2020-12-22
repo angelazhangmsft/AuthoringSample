@@ -13,4 +13,10 @@
         threadingModel="both"
         xmlns="urn:schemas-microsoft-com:winrt.v1" />
   </file>
+  <file name="WinRT.Host.dll">
+    <activatableClass
+        name="AuthoringSample.DateFormat"
+        threadingModel="both"
+        xmlns="urn:schemas-microsoft-com:winrt.v1" />
+  </file>
 </assembly>

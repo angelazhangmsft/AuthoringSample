@@ -7,12 +7,11 @@
       <CsWinRTEnableLogging>true</CsWinRTEnableLogging>
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
       <AssemblyVersion>1.0.0.0</AssemblyVersion>
-      <CopyLocalLockFileAssemblies Condition="$(CsWinRTComponent)==true">true</CopyLocalLockFileAssemblies>
       <GeneratedFilesDir Condition="'$(GeneratedFilesDir)'==''">$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '$(IntermediateOutputPath)', 'Generated Files'))</GeneratedFilesDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="1.1.1-prerelease.201218.1" />
   </ItemGroup>
 
 </Project>

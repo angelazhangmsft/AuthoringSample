@@ -6,14 +6,14 @@ namespace AuthoringSample
 {
     public class PackageFinder
     {
-        public Dictionary<string, List<string>> PackageList = new();
+        public IDictionary<string, IList<string>> PackageList { get; set; } = new Dictionary<string, IList<string>>();
 
         /// <summary>
         /// print package info after finding
         /// </summary>
         public void PrintPackages()
         {
-            foreach (KeyValuePair<string, List<string>> entry in PackageList)
+            foreach (KeyValuePair<string, IList<string>> entry in PackageList)
             {
                 Console.WriteLine(entry.Key);
                 foreach (string ver in entry.Value)

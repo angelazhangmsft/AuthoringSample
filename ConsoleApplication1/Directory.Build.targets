@@ -5,7 +5,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <CsWinRTVersion>1.1.0</CsWinRTVersion>
+    <CsWinRTVersion>1.1.1-prerelease.201218.1</CsWinRTVersion>
   </PropertyGroup>
   
   <Target Name="CopyHostAssets">

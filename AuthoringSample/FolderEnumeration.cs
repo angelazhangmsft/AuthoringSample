@@ -11,9 +11,8 @@ namespace AuthoringSample
 {
     public class FolderEnumeration
     {
-        public string AllFiles { get; set; }
-        public IList<IList<string>> GroupedFiles = new List<IList<string>>();
-        //public IList<IList<string>> GroupedFiles { get; set; } // waiting for collection mapping
+        public string AllFiles { get; set; } 
+        public IList<IList<string>> GroupedFiles { get; set; } = new List<IList<string>>();
 
         /// <summary>
         /// list all the files and folders in Pictures library 

@@ -112,12 +112,12 @@
     <None Include="Directory.Build.targets" />
     <None Include="packages.config" />
     <None Include="PropertySheet.props" />
-      <None Include="WinRT.Host.runtimeconfig.json" >
-          <DeploymentContent>true</DeploymentContent>
-      </None>
-      <Manifest Include="ConsoleApplication1.exe.manifest" >
-          <DeploymentContent>true</DeploymentContent>
-      </Manifest>
+    <None Include="WinRT.Host.runtimeconfig.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <Manifest Include="ConsoleApplication1.exe.manifest">
+      <DeploymentContent>true</DeploymentContent>
+    </Manifest>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AuthoringSample">
