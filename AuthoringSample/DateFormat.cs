@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Windows.Globalization.DateTimeFormatting;
 
 namespace AuthoringSample
@@ -10,7 +11,6 @@ namespace AuthoringSample
     {
         public DateTimeOffset CurrentDate { get; set; } = DateTime.Now;
         StringBuilder results = new();
-        
 
         public DateTimeFormatter[] BasicFormatters { get; set; } = new[]
            {
@@ -49,11 +49,10 @@ namespace AuthoringSample
             foreach (DateTimeFormatter formatter in formats)
             {
                 // Format and display date/time.
-                //results.Append(formatter.Template + ": "); 
-                //string output = new string((char[])formatter.Format(CurrentDate).Where(c => c < 128));
-                //results.Append(output + "\n");
-                //results.Append(formatter.Format(CurrentDate) + "\n");
-                results.Append(formatter.Template + ": " + formatter.Format(CurrentDate) + "\n");
+                string input = formatter.Template + ": " + formatter.Format(CurrentDate) + "\n";
+                var newstr = new string(input.Where(c => c < 128).ToArray()); //workaround to remove Left to Right chars
+                results.AppendLine(newstr);
+
             }
             return results.ToString();
         }
