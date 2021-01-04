@@ -28,4 +28,12 @@ int main()
     //hstring dateFormats3 = dateObject.GetDateFormats(dateObject.TimeFormatters());
     wcout << dateFormats1.c_str() << endl;
 
+    DateTime utc = dateObject.GetUTCTime();
+    
+    /* Shapes Component */
+    Shapes s;
+    cout << "Rectangle X coordinate before: " << s.RectObject().X << endl;
+    s.MoveRight(s.RectObject(), 10);
+    cout << "Rectangle X coordinate after: " << s.RectObject().X << endl;
+
 }

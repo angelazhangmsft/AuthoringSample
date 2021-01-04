@@ -9,7 +9,7 @@ namespace AuthoringSample
 {
     public sealed class DateFormat
     {
-        public DateTimeOffset CurrentDate { get; set; } = DateTime.Now;
+        public DateTimeOffset CurrentDate { get; } = DateTime.Now;
         StringBuilder results = new();
 
         public DateTimeFormatter[] BasicFormatters { get; set; } = new[]
