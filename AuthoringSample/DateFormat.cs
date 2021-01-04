@@ -56,10 +56,5 @@ namespace AuthoringSample
             }
             return results.ToString();
         }
-
-        public DateTimeOffset GetUTCTime()
-        {
-            return CurrentDate.UtcDateTime;
-        }
     }
 }

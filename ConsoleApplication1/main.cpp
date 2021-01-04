@@ -16,8 +16,8 @@ int main()
     wcout << folderEnumerator.AllFiles().c_str() << endl;
 
     //folderEnumerator.GroupByMonthAsync().get();
-    ////folderEnumerator.GroupByRatingAsync().get();
-    ////folderEnumerator.GroupByTagAsync().get();
+    //folderEnumerator.GroupByRatingAsync().get();
+    //folderEnumerator.GroupByTagAsync().get();
     //folderEnumerator.PrintGroupedFiles();
 
     /* DateFormat Component */
@@ -27,8 +27,6 @@ int main()
     //hstring dateFormats2 = dateObject.GetDateFormats(dateObject.DateFormatters());
     //hstring dateFormats3 = dateObject.GetDateFormats(dateObject.TimeFormatters());
     wcout << dateFormats1.c_str() << endl;
-
-    DateTime utc = dateObject.GetUTCTime();
     
     /* Shapes Component */
     Shapes s;
